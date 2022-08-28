@@ -1,0 +1,17 @@
+name: 'Set up install4j'
+description: 'Set up a specific version of install4j and add the command-line tools to PATH'
+author: 'Luan Gong'
+inputs:
+  version:
+    description: 'The version to install. Examples: 9, 9.x, 9.0.7, 10.0, etc.'
+    required: true
+  license:
+    description: 'The license key for install4j'
+    required: true
+  cache:
+    description: 'Whether to cache JREs donwloaded by install4j'
+    required: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+  # post: 'dist/cleanup.js'
