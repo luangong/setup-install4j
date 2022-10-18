@@ -11,20 +11,21 @@ This action provides the following functionality for GitHub Actions runners:
 
 ```yml
 steps:
-  - uses: luangong/setup-install4j
+  - uses: luangong/setup-install4j@main
     with:
       version: 9.0.7
       license: ${{ secrets.INSTALL4J_LICENSE }}
-      cache: true
 ```
 
+<!--
 ### Caching JREs
 
-The action has a built-in functionality for caching and restoring JREs for bundling. It uses [actions/cache](https://github.com/actions/cache) under hood for caching JRE bundles but requires less configuration settings. See the [JRE Bundles](https://www.ej-technologies.com/resources/install4j/help/doc/concepts/jreBundles.html) section of the official documentation for more details.
+The action has a built-in functionality for caching and restoring JREs for bundling.  It uses [actions/cache](https://github.com/actions/cache) under the hood for caching JRE bundles but requires less configuration settings.  See the [JRE Bundles](https://www.ej-technologies.com/resources/install4j/help/doc/concepts/jreBundles.html) section of the official documentation for more details.
+-->
 
-## TODO
+## TODOs
 
-- [ ] Handle version specifications
+- [ ] Handle semantic version specifications
 - [ ] Implement caching of downloaded JREs
-- [ ] Take advantage of tools cache
+- [ ] Take advantage of tool cache
 - [ ] Cleaning up
