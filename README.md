@@ -13,7 +13,7 @@ This action provides the following functionality for GitHub Actions runners:
 steps:
   - uses: luangong/setup-install4j@main
     with:
-      version: 9.0.7
+      version: 10.0.4
       license: ${{ secrets.INSTALL4J_LICENSE }}
 ```
 
