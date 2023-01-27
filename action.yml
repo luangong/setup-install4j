@@ -19,3 +19,8 @@ runs:
   using: 'node16'
   main: 'dist/index.js'
   # post: 'dist/cleanup.js'
+
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#branding
+branding:
+  icon: 'monitor'
+  color: 'blue'
