@@ -13,17 +13,18 @@ type PlatformConfig = {
   addToPath: boolean;
 };
 
-// The Linux and macOS virtual machines both run using password-less sudo.  When you need to execute
-// commands or install tools that require more privileges than the current user, you can use sudo
-// without needing to provide a password.
+// The Linux and macOS virtual machines both run using password-less sudo.  When you need
+// to execute commands or install tools that require more privileges than the current
+// user, you can use sudo without needing to provide a password.
 //
-// Windows virtual machines are configured to run as administrators with User Account Control (UAC)
-// disabled.
+// Windows virtual machines are configured to run as administrators with User Account
+// Control (UAC) disabled.
 //
 // https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#administrative-privileges
 
-// We install install4j to a fixed directory rather than a major-version-dependent directory such as
-// "/opt/install4j9" or "C:\Program Files\install4j9" to make life easier.
+// We install install4j to a fixed directory rather than a major-version-dependent
+// directory such as "/opt/install4j9" or "C:\Program Files\install4j9" to make life
+// easier.
 
 const platforms: {
   [platform: string]: PlatformConfig;
@@ -48,8 +49,8 @@ const platforms: {
     // Refer to https://github.com/Homebrew/brew/blob/master/Library/Homebrew/unpack_strategy/dmg.rb
     // for how to install an macOS application (*.app) inside a .dmg file.
     //
-    // Note that the 'cp' command on macOS is different from the one from GNU coreutils where the
-    // BSD 'cp' command accepts only '-R' but neither '-r' nor '--recursive'.
+    // Note that the 'cp' command on macOS is different from the one from GNU coreutils
+    // where the BSD 'cp' command accepts only '-R' but neither '-r' nor '--recursive'.
     commands: [
       'hdiutil attach <filename>',
       'cp -R /Volumes/install4j/install4j.app /Applications',
@@ -83,7 +84,10 @@ const execOptions: ExecOptions = {
  * - add bin directory to PATH
  */
 
-function downloadInstaller(platformConfig: PlatformConfig, version: string): Promise<string> {
+function downloadInstaller(
+  platformConfig: PlatformConfig,
+  version: string,
+): Promise<string> {
   // https://download.ej-technologies.com/install4j/install4j_linux-x64_9_0_7.deb
   // https://download.ej-technologies.com/install4j/install4j_linux-x64_9_0_7.sh
   // https://download.ej-technologies.com/install4j/install4j_macos_9_0_7.dmg

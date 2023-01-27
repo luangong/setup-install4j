@@ -10,13 +10,15 @@ module.exports = {
   root: true,
   overrides: [
     {
-      // Config files for Node.js tools like ESLint, Babel, webpack, postcss, stylelint, Jest, etc.
+      // Config files for Node.js tools like ESLint, Babel, webpack, postcss, stylelint,
+      // Jest, etc.
       files: ['./*.js'],
       env: {
         // 'eslint-config-airbnb-base' includes 'node: true' as env.
         // See https://github.com/airbnb/javascript/issues/1476 and
         // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/node.js
         // for more details.
+        //
         // node: true,
       },
       extends: [
@@ -30,6 +32,15 @@ module.exports = {
       ],
       rules: {
         'linebreak-style': 'off',
+        // Override the maximum line length of 100 in 'eslint-config-airbnb-base'
+        // https://eslint.org/docs/latest/rules/max-len
+        'max-len': ['error', 90, 2, {
+          ignoreUrls: true,
+          ignoreComments: false,
+          ignoreRegExpLiterals: true,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+        }],
         'no-multi-spaces': ['error', {
           ignoreEOLComments: true,
         }],
@@ -54,8 +65,10 @@ module.exports = {
         // '@typescript-eslint',  // @typescript-eslint/eslint-plugin
       ],
       extends: [
-        // The 'extends' property value can omit the 'eslint-config-' prefix of the package name.
-        // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb/index.js
+        // We can omit the 'eslint-config-' prefix of the package name for the 'extends'
+        // property.
+        //
+        // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/index.js
         'airbnb-base',            // eslint-config-airbnb-base
 
         // https://github.com/iamturns/eslint-config-airbnb-typescript/blob/master/lib/shared.js
@@ -67,27 +80,37 @@ module.exports = {
       ],
       rules: {
         'linebreak-style': 'off',
+        // Override the maximum line length of 100 in 'eslint-config-airbnb-base'
+        // https://eslint.org/docs/latest/rules/max-len
+        'max-len': ['error', 90, 2, {
+          ignoreUrls: true,
+          ignoreComments: false,
+          ignoreRegExpLiterals: true,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+        }],
       },
     },
     {
       // *.(ts|tsx) files for unit testing with Jest
-      // Note that this block further overrides the previous block
+      // Note that this block further overrides the previous block.
       files: [
         '**/__tests__/**/*.[jt]s?(x)',
         '**/?(*.)+(spec|test).[tj]s?(x)',
       ],
       plugins: [
-        // There is no need to specify the 'jest' plugin since the 'plugin:jest/recommended' config
-        // already includes it.
-        // See https://github.com/jest-community/eslint-plugin-jest/blob/main/src/index.ts for
-        // more details.
+        // There is no need to specify the 'jest' plugin since the
+        // 'plugin:jest/recommended' config already includes it.
+        //
+        // See https://github.com/jest-community/eslint-plugin-jest/blob/main/src/index.ts
+        // for more details.
       ],
       extends: [
         'plugin:jest/recommended',
       ],
       env: {
-        // No need to specify 'jest: true' since the 'eslint-plugin-jest' plugin specifies
-        // 'jest/globals: true'
+        // There is no need to specify 'jest: true' since the 'eslint-plugin-jest' plugin
+        // specifies 'jest/globals: true'
         node: true,
       },
     },
