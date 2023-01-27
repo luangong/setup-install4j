@@ -93,8 +93,8 @@ function downloadInstaller(platformConfig: PlatformConfig, version: string): Pro
   // https://download.ej-technologies.com/install4j/install4j_linux-x64_9_0_7.deb
   // https://download.ej-technologies.com/install4j/install4j_linux-x64_9_0_7.sh
 
-  // https://download.ej-technologies.com/install4j/install4j_macos_10_0_1.dmg
-  // https://download.ej-technologies.com/install4j/install4j_linux-x64_10_0_1.sh
+  // https://download.ej-technologies.com/install4j/install4j_macos_10_0_3.dmg
+  // https://download.ej-technologies.com/install4j/install4j_linux-x64_10_0_3.sh
   const baseUrl = 'https://download.ej-technologies.com/install4j';
   const versionUnderscores = version.replace(/\./g, '_');
   // eslint-disable-next-line
