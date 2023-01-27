@@ -6582,16 +6582,17 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(7733));
 const exec = __importStar(__nccwpck_require__(1757));
 const tc = __importStar(__nccwpck_require__(514));
-// The Linux and macOS virtual machines both run using password-less sudo.  When you need to execute
-// commands or install tools that require more privileges than the current user, you can use sudo
-// without needing to provide a password.
+// The Linux and macOS virtual machines both run using password-less sudo.  When you need
+// to execute commands or install tools that require more privileges than the current
+// user, you can use sudo without needing to provide a password.
 //
-// Windows virtual machines are configured to run as administrators with User Account Control (UAC)
-// disabled.
+// Windows virtual machines are configured to run as administrators with User Account
+// Control (UAC) disabled.
 //
 // https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#administrative-privileges
-// We install install4j to a fixed directory rather than a major-version-dependent directory such as
-// "/opt/install4j9" or "C:\Program Files\install4j9" to make life easier.
+// We install install4j to a fixed directory rather than a major-version-dependent
+// directory such as "/opt/install4j9" or "C:\Program Files\install4j9" to make life
+// easier.
 const platforms = {
     win32: {
         osArch: 'windows-x64',
@@ -6613,8 +6614,8 @@ const platforms = {
         // Refer to https://github.com/Homebrew/brew/blob/master/Library/Homebrew/unpack_strategy/dmg.rb
         // for how to install an macOS application (*.app) inside a .dmg file.
         //
-        // Note that the 'cp' command on macOS is different from the one from GNU coreutils where the
-        // BSD 'cp' command accepts only '-R' but neither '-r' nor '--recursive'.
+        // Note that the 'cp' command on macOS is different from the one from GNU coreutils
+        // where the BSD 'cp' command accepts only '-R' but neither '-r' nor '--recursive'.
         commands: [
             'hdiutil attach <filename>',
             'cp -R /Volumes/install4j/install4j.app /Applications',

@@ -1,5 +1,5 @@
-# This workflow does a clean installation of Node dependencies, caches/restores them, builds the
-# source code, and runs tests with the specified version of Node.
+# This workflow does a clean installation of Node dependencies, caches/restores them,
+# builds the source code, and runs tests with the specified version of Node.
 
 name: Node.js CI
 
@@ -21,9 +21,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Note: This action must be run before 'actions/setup-node' if we let 'actions/setup-node'
-      # handle caching for us because it will run 'pnpm store path' to get the path to the pnpm
-      # virtual store.
+      # Note: This action must be run before 'actions/setup-node' if we let
+      # 'actions/setup-node' handle caching for us because it will run 'pnpm store path'
+      # to get the path to the pnpm virtual store.
       #
       # See https://github.com/pnpm/action-setup for more details.
       - uses: pnpm/action-setup@v2
@@ -53,8 +53,8 @@ jobs:
       # https://docs.github.com/actions/using-workflows/storing-workflow-data-as-artifacts
       # https://github.com/actions/upload-artifact
       #
-      # It's currently not possible to preview files in the artifact.
-      # Follow up with https://github.com/actions/upload-artifact/issues/14 for further updates.
+      # It's currently not possible to preview files in the artifact.  Follow up with
+      # https://github.com/actions/upload-artifact/issues/14 for further updates.
       - uses: actions/upload-artifact@v3
         with:
           path: |
