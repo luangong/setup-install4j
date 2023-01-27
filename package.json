@@ -1,6 +1,6 @@
 {
   "name": "setup-install4j",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A JavaScript action for setting up install4j",
   "main": "dist/index.js",
   "scripts": {
