@@ -11,14 +11,9 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
-        version:
-          - '9.0.7'
-          - '10.0.4'
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
+      # https://github.com/actions/checkout
       - uses: actions/checkout@v3
 
       # Note: This action must be run before 'actions/setup-node' if we let
@@ -43,13 +38,6 @@ jobs:
       - run: pnpm test
       - run: pnpm build
 
-      - uses: ./
-        with:
-          version: ${{ matrix.version }}
-          license: ${{ secrets.INSTALL4J_LICENSE_KEY }}
-
-      - run: install4jc --version
-
       # https://docs.github.com/actions/using-workflows/storing-workflow-data-as-artifacts
       # https://github.com/actions/upload-artifact
       #
@@ -60,3 +48,25 @@ jobs:
           path: |
             coverage
             dist
+
+  install4j:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        version:
+          - '9.0.7'
+          - '10.0.4'
+    runs-on: ${{ matrix.os }}
+    steps:
+      # https://github.com/actions/checkout
+      - uses: actions/checkout@v3
+
+      # Run our own action to verify that it works with all combinations of supported
+      # operating systems and versions of install4j
+      - uses: ./
+        with:
+          version: ${{ matrix.version }}
+          license: ${{ secrets.INSTALL4J_LICENSE_KEY }}
+
+      # https://www.ej-technologies.com/resources/install4j/help/doc/cli/compiler.html
+      - run: install4jc --version
