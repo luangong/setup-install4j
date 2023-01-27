@@ -7,6 +7,8 @@ This action provides the following functionality for GitHub Actions runners:
 - Downloading and setting up a requested version of [install4j](https://www.ej-technologies.com/products/install4j/overview.html)
 - Caching downloaded JRE bundles
 
+After setting up install4j, its bin directory will be added to PATH, so you can run commands like `createbundle` or `install4jc` directly.
+
 ## Usage
 
 ```yml
