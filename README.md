@@ -13,7 +13,7 @@ After setting up install4j, its bin directory will be added to PATH, so you can 
 
 ```yml
 steps:
-  - uses: luangong/setup-install4j@main
+  - uses: luangong/setup-install4j@v1
     with:
       version: 10.0.4
       license: ${{ secrets.INSTALL4J_LICENSE }}
