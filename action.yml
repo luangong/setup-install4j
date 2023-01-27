@@ -1,5 +1,7 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
 name: 'Set up install4j'
-description: 'Set up a specific version of install4j and add the command-line tools to PATH'
+description: 'Set up a specific version of install4j and add the bin directory to PATH'
 author: 'Luan Gong'
 inputs:
   version:
@@ -12,6 +14,8 @@ inputs:
     description: 'Whether to cache JREs donwloaded by install4j'
     required: false
 runs:
+  # Only 'node12' and 'node16' are allowed currently.
+  # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs
   using: 'node16'
   main: 'dist/index.js'
   # post: 'dist/cleanup.js'
