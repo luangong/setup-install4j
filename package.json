@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
-  "packageManager": "pnpm@7.9.5",
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
