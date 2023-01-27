@@ -84,17 +84,16 @@ const execOptions: ExecOptions = {
  */
 
 function downloadInstaller(platformConfig: PlatformConfig, version: string): Promise<string> {
-  // install4j v8 installer on Linux/Unix requires JRE version 8-12
-  // https://download.ej-technologies.com/install4j/install4j_linux_8_0_11.deb
-  // https://download.ej-technologies.com/install4j/install4j_unix_8_0_11.sh
-
-  // https://download.ej-technologies.com/install4j/install4j_macos_9_0_7.dmg
-  // https://download.ej-technologies.com/install4j/install4j_windows-x64_9_0_7.exe
   // https://download.ej-technologies.com/install4j/install4j_linux-x64_9_0_7.deb
   // https://download.ej-technologies.com/install4j/install4j_linux-x64_9_0_7.sh
-
-  // https://download.ej-technologies.com/install4j/install4j_macos_10_0_1.dmg
-  // https://download.ej-technologies.com/install4j/install4j_linux-x64_10_0_1.sh
+  // https://download.ej-technologies.com/install4j/install4j_macos_9_0_7.dmg
+  // https://download.ej-technologies.com/install4j/install4j_windows-x64_9_0_7.exe
+  //
+  // https://download.ej-technologies.com/install4j/install4j_linux-x64_10_0_4.deb
+  // https://download.ej-technologies.com/install4j/install4j_linux-x64_10_0_4.sh
+  // https://download.ej-technologies.com/install4j/install4j_macos_10_0_4.dmg
+  // https://download.ej-technologies.com/install4j/install4j_windows-arm64_10_0_4.exe
+  // https://download.ej-technologies.com/install4j/install4j_windows-x64_10_0_4.exe
   const baseUrl = 'https://download.ej-technologies.com/install4j';
   const versionUnderscores = version.replace(/\./g, '_');
   // eslint-disable-next-line
