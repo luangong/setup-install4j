@@ -17,6 +17,8 @@ steps:
       license: ${{ secrets.INSTALL4J_LICENSE }}
 ```
 
+Currently, install4j v9 and newer are supported.
+
 <!--
 ### Caching JREs
 
