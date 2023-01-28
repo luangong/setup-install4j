@@ -29,7 +29,7 @@ Currently, install4j v9 and newer are supported.
 
 Also note that you need to specify the exact version number of install4j.  Semantic version numbers such as `10.x` will be supported in a future release.  For the list of all available versions please refer to [this page](https://www.ej-technologies.com/download/install4j/changelog.html).
 
-If you’re using Maven and the [install4j Maven plugin](https://www.ej-technologies.com/resources/install4j/help/doc/cli/maven.html) to build your project, you can specify the installtion directory of install4j in `pom.xml` like this:
+If you’re using Maven and the [install4j Maven plugin](https://www.ej-technologies.com/resources/install4j/help/doc/cli/maven.html) to build your project, you can specify the installation directory of install4j in `pom.xml` like this:
 
 ```xml
 <pluginRepositories>
@@ -48,7 +48,7 @@ If you’re using Maven and the [install4j Maven plugin](https://www.ej-technolo
       <executions>
         <execution>
           <id>generate-installer(s)</id>
-          <phase>package<phase>
+          <phase>package</phase>
           <goals>
             <goal>compile</goal>
           </goals>
@@ -56,7 +56,7 @@ If you’re using Maven and the [install4j Maven plugin](https://www.ej-technolo
             <installDir>/opt/install4j</installDir>
             <!-- Other configuration options go here -->
           </configuration>
-        <execution>
+        </execution>
       </executions>
     </plugin>
   </plugins>
