@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # https://github.com/actions/checkout
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # Note: This action must be run before 'actions/setup-node' if we let
       # 'actions/setup-node' handle caching for us because it will run 'pnpm store path'
@@ -59,7 +59,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       # https://github.com/actions/checkout
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # Run our own action to verify that it works with all combinations of supported
       # operating systems and versions of install4j
