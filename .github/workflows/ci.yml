@@ -28,7 +28,7 @@ jobs:
       # https://docs.github.com/actions/automating-builds-and-tests/building-and-testing-nodejs
       # https://docs.github.com/actions/using-workflows/caching-dependencies-to-speed-up-workflows
       # https://github.com/actions/setup-node
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 16
           cache: pnpm
